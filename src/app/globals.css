@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+/* Narzaalai design tokens: deep navy surfaces, solar-yellow accent, restrained green for success. */
+@theme {
+  --font-sans: "Segoe UI", "Noto Sans", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, monospace;
+
+  --color-navy-950: #071426;
+  --color-navy-900: #0b1f3a;
+  --color-navy-800: #12304f;
+  --color-navy-700: #1c4268;
+  --color-navy-300: #9db3cc;
+  --color-navy-200: #c9d6e5;
+  --color-navy-100: #e3eaf3;
+  --color-navy-50: #f3f6fa;
+
+  --color-sun-100: #fff3cc;
+  --color-sun-300: #fbd24d;
+  --color-sun-400: #f5b700;
+  --color-sun-500: #e0a400;
+  --color-sun-800: #7a5500;
+
+  --color-leaf-50: #eaf7ef;
+  --color-leaf-100: #d6f0e0;
+  --color-leaf-600: #1e7f4f;
+  --color-leaf-800: #14583a;
+
+  --color-danger-50: #fdf0ee;
+  --color-danger-100: #fbdcd8;
+  --color-danger-600: #b42318;
+  --color-danger-800: #7a1810;
+
+  --color-ink: #0f1b2d;
+  --color-muted: #51627a;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-navy-50);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  line-height: 1.55;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-sun-400);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Native dialog used for destructive-action confirmations. */
+dialog::backdrop {
+  background: rgb(7 20 38 / 0.55);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
